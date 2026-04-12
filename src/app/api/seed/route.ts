@@ -2,13 +2,8 @@ import prisma from '@/lib/prisma';
 import { NextResponse, NextRequest } from 'next/server'
 
 export async function GET(request: Request) { 
-  try{
-await prisma.todo.deleteMany(); // delete * from todo
-  }
-  catch{
 
-  }
-  
+  await prisma.todo.deleteMany(); // delete * from todo
 
   await prisma.todo.createMany({
     data: [
